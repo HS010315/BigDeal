@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 dashDirection;
     public float jumpForce = 10f;
     private bool canJump = true;
-
+    private bool isFlying = false;
     public int playerLife = 3;
 
     private Rigidbody rb;
@@ -54,6 +54,22 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
 
         }
+        if (Input.GetKeyDown(KeyCode.LeftControl)&& !isFlying)
+        {
+            isFlying = !isFlying;
+        }
+        if (isFlying)
+        {
+            Fly();
+        }
+    }
+
+    private void Fly()
+    {
+        float moveY = Input.GetAxis("Vertical");
+        rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
+        //게이지 전부 소모 시 추락
+        //다시 누르면 비활성화
     }
 
     private IEnumerator Dash()
