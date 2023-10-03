@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     private bool canJump = true;
     private bool isFlying = false;
+    private bool isDie = false;
     public int playerLife = 3;
+    public GameObject explosionEffect;
+    public Transform respawnPosition;
 
     private Rigidbody rb;
 
@@ -24,9 +27,25 @@ public class PlayerController : MonoBehaviour
         ani = GetComponent<Animator>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet")) // 탄막에 부딪혔을 때
+        {
+            Destroy(other.gameObject); // 탄막 파괴
+
+            if (explosionEffect != null)
+            {
+                Instantiate(explosionEffect, transform.position, Quaternion.identity); // 폭발 효과 생성
+            }
+            PlayerDied();
+        }
+    }
     public void PlayerDied()
     {
         playerLife--;
+
+        gameObject.SetActive(false);
+        isDie = true;
 
         if(playerLife <= 0)
         {         
@@ -36,7 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             RespawnPlayer();
         }
-
+        return;
     }
 
 
@@ -114,10 +133,11 @@ public class PlayerController : MonoBehaviour
 
     private void RespawnPlayer()
     {
-        //플레이어가 카메라 속 일정 좌표로 다시 나오게 구현해야함.
+        if(isDie)
+        {
+            gameObject.SetActive(true);
+            isDie = false;
+        }
+        transform.position = respawnPosition.position;
     }
-
-
-
-
 }
