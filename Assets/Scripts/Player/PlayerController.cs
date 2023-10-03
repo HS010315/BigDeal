@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet")) // 탄막에 부딪혔을 때
+        if (other.CompareTag("Bullet"))     // 탄막에 부딪혔을 때
         {
-            Destroy(other.gameObject); // 탄막 파괴
+            Destroy(other.gameObject);      // 탄막 파괴
 
             if (explosionEffect != null)
             {
@@ -91,7 +91,6 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
         //게이지 전부 소모 시 추락
-        //키를 누르고 있다가 해제하면 비활성화
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             isFlying = false;
@@ -114,6 +113,7 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
 
         yield return new WaitForSeconds(DashCoolTime);  //왜 쿨타임 적용이 안되지 ?
+        //대쉬 중 무적 판정
 
     }
 
@@ -139,5 +139,7 @@ public class PlayerController : MonoBehaviour
             isDie = false;
         }
         transform.position = respawnPosition.position;
+
+        //리스폰 후 무적 판정 
     }
 }
