@@ -29,14 +29,17 @@ public class PlayerController : MonoBehaviour
         playerLife--;
 
         if(playerLife <= 0)
-        {
+        {         
             GameOver();
         }
         else
         {
             RespawnPlayer();
         }
+
     }
+
+
 
     private void Update()
     {
@@ -113,5 +116,8 @@ public class PlayerController : MonoBehaviour
     {
         //플레이어가 카메라 속 일정 좌표로 다시 나오게 구현해야함.
     }
+
+
+
 
 }
