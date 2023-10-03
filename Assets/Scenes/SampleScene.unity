@@ -645,8 +645,8 @@ MonoBehaviour:
   resumeTime: 0
   useAutoRelease: 0
   autoReleaseTime: 10
-  startAngle: 180
-  shiftAngle: 10
+  startAngle: 90
+  shiftAngle: -10
   betweenDelay: 0.2
 --- !u!4 &1406400041
 Transform:
