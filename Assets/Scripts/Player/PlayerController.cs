@@ -48,13 +48,13 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
             canJump = false;
         }
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        if(Input.GetKeyDown(KeyCode.L) && !isDashing)
         {
             dashDirection = rb.velocity.normalized;
             StartCoroutine(Dash());
 
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl)&& !isFlying)
+        if (Input.GetKey(KeyCode.LeftShift) && !isFlying)
         {
             isFlying = !isFlying;
         }
@@ -69,7 +69,11 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
         //게이지 전부 소모 시 추락
-        //다시 누르면 비활성화
+        //키를 누르고 있다가 해제하면 비활성화
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isFlying = false;
+        }
     }
 
     private IEnumerator Dash()
@@ -102,6 +106,7 @@ public class PlayerController : MonoBehaviour
     private void GameOver()
     {
         //UI 팝업 후 Restart 버튼으로 씬 처음부터 다시 불러옴. + 추가 요소 필요
+        Destroy(gameObject);
     }
 
     private void RespawnPlayer()
