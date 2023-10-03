@@ -25,7 +25,11 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
+
+        GameObject mainCamera = Camera.main.gameObject;
+        Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
