@@ -26,7 +26,7 @@ public class GameManager : GenericSingleton<GameManager>
         float cameraHeight = 2f * mainCamera.orthographicSize;
         float cameraWidth = cameraHeight * mainCamera.aspect;
         float spawnX = mainCamera.transform.position.x + cameraWidth / 2f + 2f;
-        float spawnY = Random.Range(mainCamera.transform.position.y - cameraHeight / 2f, mainCamera.transform.position.y + cameraHeight / 2f) + 8f;
+        float spawnY = Random.Range(mainCamera.transform.position.y - cameraHeight / 2f, mainCamera.transform.position.y + cameraHeight / 2f) + 6f;
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
 
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);

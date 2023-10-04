@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
         GameObject mainCamera = Camera.main.gameObject;
         Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
+
     }
     
 
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
         if (canJump && Input.GetKeyDown(KeyCode.Space))
@@ -74,15 +76,19 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
             canJump = false;
         }
-        if(Input.GetKeyDown(KeyCode.L) && !isDashing)
+        if (Input.GetKeyDown(KeyCode.L) && !isDashing)
         {
-            dashDirection = rb.velocity.normalized;
-            StartCoroutine(Dash());
-
+            // 플레이어의 입력을 기반으로 대쉬 방향 설정
+            Vector2 dashInput = new Vector2(moveX, moveY);
+            if (dashInput.magnitude > 0.1f) // 입력이 존재할 때만 대쉬
+            {
+                dashDirection = dashInput.normalized;
+                StartCoroutine(Dash());
+            }
         }
         if (Input.GetKey(KeyCode.LeftShift) && !isFlying)
         {
-            isFlying = !isFlying;
+            isFlying = true;
         }
         if (isFlying)
         {
@@ -105,7 +111,7 @@ public class PlayerController : MonoBehaviour
     {
         isDashing = true;
         float dashTime = 0f;
-
+        rb.velocity = Vector3.zero;
         while (dashTime < DashTime)
         {
             rb.velocity = dashDirection * dashSpeed;    //점프도 인식이 되서 대쉬 방향이 이상함.
@@ -115,7 +121,6 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         isDashing = false;
-
         yield return new WaitForSeconds(DashCoolTime);  //왜 쿨타임 적용이 안되지 ?
         //대쉬 중 무적 판정
 
@@ -133,6 +138,8 @@ public class PlayerController : MonoBehaviour
     {
         //UI 팝업 후 Restart 버튼으로 씬 처음부터 다시 불러옴. + 추가 요소 필요
         Destroy(gameObject);
+        Debug.Log("die");
+
     }
 
     private void RespawnPlayer()
@@ -143,6 +150,7 @@ public class PlayerController : MonoBehaviour
             isDie = false;
         }
         transform.position = respawnPosition.position;
+        Debug.Log("respawn");
 
         //리스폰 후 무적 판정 
     }

@@ -37,7 +37,7 @@ public class BossController : MonoBehaviour
                 }
 
                 // 카메라 이동을 재개
-                cameraMovementScript.ResumeCameraMovement();
+                //cameraMovementScript.ResumeCameraMovement();
             }
         }
     }
