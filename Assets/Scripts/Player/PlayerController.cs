@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float dashSpeed = 10f;
+    public float dashSpeed = 20f;
     public float DashTime = 0.1f;
     public float DashCoolTime = 5f;
     private bool isDashing = false;
     private Vector3 dashDirection;
-    public float jumpForce = 10f;
+    public float jumpForce = 2f;
     private bool canJump = true;
     private bool isFlying = false;
     private bool isDie = false;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public Transform respawnPosition;
 
     private Rigidbody rb;
-
+    public Collider co;
     private Animator ani;
     void Start()
     {
@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
             if (dashInput.magnitude > 0.1f) // 입력이 존재할 때만 대쉬
             {
                 dashDirection = dashInput.normalized;
+                co.enabled = false;
                 StartCoroutine(Dash());
             }
         }
@@ -121,6 +122,8 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         isDashing = false;
+        co.enabled = true;
+
         yield return new WaitForSeconds(DashCoolTime);  //왜 쿨타임 적용이 안되지 ?
         //대쉬 중 무적 판정
 

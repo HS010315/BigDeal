@@ -204,15 +204,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  dashSpeed: 20
+  dashSpeed: 40
   DashTime: 0.1
   DashCoolTime: 5
-  jumpForce: 10
+  jumpForce: 7
   playerLife: 3
   explosionEffect: {fileID: 0}
   respawnPosition: {fileID: 1967960454}
-  SampleTimer: 2
-  SampelCheckTimer: 0
+  co: {fileID: 762274551}
 --- !u!65 &762274551
 BoxCollider:
   m_ObjectHideFlags: 0
