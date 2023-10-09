@@ -182,9 +182,9 @@ MonoBehaviour:
   useAutoRelease: 0
   autoReleaseTime: 10
   spiralWayNum: 4
-  startAngle: 180
+  startAngle: 90
   shiftAngle: 5
-  betweenDealy: 0.1
+  betweenDealy: 0.5
 --- !u!1 &142535277 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8059259800470508484, guid: dbfca11bc211e854b9332e345fefc3c0, type: 3}
@@ -618,7 +618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1406400040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   maxSpeed: 0
   useMinSpeed: 0
   minSpeed: 0
-  accelerationTurn: 0
+  accelerationTurn: 3
   usePauseAndResume: 0
   pauseTime: 0
   resumeTime: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
   autoReleaseTime: 10
   startAngle: 90
   shiftAngle: -10
-  betweenDelay: 0.2
+  betweenDelay: 1
 --- !u!4 &1406400041
 Transform:
   m_ObjectHideFlags: 0
@@ -724,7 +724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1805154380
 Transform:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 142535277}
   projectileNum: 400
-  projectileSpeed: 10
+  projectileSpeed: 5
   accelerationSpeed: 0
   useMaxSpeed: 0
   maxSpeed: 0
@@ -767,11 +767,11 @@ MonoBehaviour:
   useAutoRelease: 0
   autoReleaseTime: 10
   wayNum: 8
-  waveCenterAngle: 180
-  waveRangeSize: 70
-  waveSpeed: 6
-  betweenAngle: 45
-  nextLineDelay: 0.05
+  waveCenterAngle: 90
+  waveRangeSize: 50
+  waveSpeed: 2
+  betweenAngle: 15
+  nextLineDelay: 1
 --- !u!1001 &6579450173387025513
 PrefabInstance:
   m_ObjectHideFlags: 0
