@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public int playerLife = 3;
     public GameObject explosionEffect;
     public Transform respawnPosition;
+    private bool isInvincible = false; // 무적 상태 변수 추가
 
 
     private Rigidbody rb;
@@ -32,18 +33,25 @@ public class PlayerController : MonoBehaviour
         Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
 
     }
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))     // 탄막에 부딪혔을 때
+        if (other.CompareTag("Bullet"))
         {
-            Destroy(other.gameObject);      // 탄막 파괴
+            Destroy(other.gameObject);
 
             if (explosionEffect != null)
             {
-                Instantiate(explosionEffect, transform.position, Quaternion.identity); // 폭발 효과 생성
+                Instantiate(explosionEffect, transform.position, Quaternion.identity);
             }
+
+            // 무적 상태인 경우 충돌 처리를 스킵
+            if (isInvincible)
+            {
+                return;
+            }
+
             PlayerDied();
         }
     }
@@ -54,8 +62,8 @@ public class PlayerController : MonoBehaviour
         gameObject.SetActive(false);
         isDie = true;
 
-        if(playerLife <= 0)
-        {         
+        if (playerLife <= 0)
+        {
             GameOver();
         }
         else
@@ -118,7 +126,7 @@ public class PlayerController : MonoBehaviour
         while (dashTime < DashTime)
         {
             rb.velocity = dashDirection * dashSpeed;    //점프도 인식이 되서 대쉬 방향이 이상함.
-            dashTime += Time.deltaTime;                 
+            dashTime += Time.deltaTime;
             yield return null;
         }
 
@@ -137,9 +145,8 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
         }
-        else if (collision.gameObject.CompareTag("Enemy"))
+        else if (collision.gameObject.CompareTag("Enemy") && !isInvincible) // 무적 상태가 아닐 때만 처리
         {
-            // Enemy와 충돌한 경우 플레이어 리스폰
             PlayerDied();
         }
     }
@@ -154,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
     private void RespawnPlayer()
     {
-        if(isDie)
+        if (isDie)
         {
             gameObject.SetActive(true);
             isDie = false;
@@ -162,6 +169,18 @@ public class PlayerController : MonoBehaviour
         transform.position = respawnPosition.position;
         Debug.Log("respawn");
 
-        //리스폰 후 무적 판정 
+        // 리스폰 후 무적 상태 활성화
+        isInvincible = true;
+
+        // 2초 후에 무적 상태 비활성화
+        StartCoroutine(DisableInvincibility());
+    }
+
+    private IEnumerator DisableInvincibility()
+    {
+        yield return new WaitForSeconds(3f); // 3초 대기
+
+        // 무적 상태 비활성화
+        isInvincible = false;
     }
 }
