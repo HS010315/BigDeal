@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8547712755883403504}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  shootInterval: 5
-  bulletPrefab: {fileID: 8059259800470508484, guid: dbfca11bc211e854b9332e345fefc3c0, type: 3}
-  bulletSpawnPoint: {fileID: 1448816755156979482}
-  bulletSpeed: 8
