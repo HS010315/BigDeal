@@ -137,11 +137,6 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
         }
-        else if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // Enemy와 충돌한 경우 플레이어 리스폰
-            PlayerDied();
-        }
     }
 
     private void GameOver()
