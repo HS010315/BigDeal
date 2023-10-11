@@ -10,6 +10,8 @@ public class PlayerShoot : MonoBehaviour
 
     private float nextFireTime = 0f;   // 다음 발사 가능한 시간
 
+    public int damage = 10; 
+
     void Update()
     {
         // K 키를 누르고 발사 간격을 지난 경우에만 총알을 발사합니다.
@@ -31,5 +33,9 @@ public class PlayerShoot : MonoBehaviour
 
         // 총알이 화면 밖으로 나가면 일정 시간 후에 파괴됩니다.
         Destroy(bullet, 3f);
+
+        
     }
+
+
 }
