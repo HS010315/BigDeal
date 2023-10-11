@@ -11,11 +11,14 @@ public class EnemyController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public float bulletSpeed = 10f;
+    public int health = 100;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
+        
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -46,7 +49,6 @@ public class EnemyController : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.useGravity = false;
             rb.isKinematic = true;
-
             // 플레이어를 향해 총을 쏩니다.
             Shoot();
         }
@@ -71,4 +73,24 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        // 체력이 0 이하로 떨어졌을 때 적 오브젝트를 제거
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    // 적 오브젝트를 제거하는 함수
+    void Die()
+    {
+
+        // gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+
+
 }
