@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         // K 키를 누르고 발사 간격을 지난 경우에만 총알을 발사합니다.
-        if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFireTime)
+        if (Input.GetKey(KeyCode.K) && Time.time > nextFireTime)
         {
             Shoot(); // 총알 발사 함수 호출
             nextFireTime = Time.time + 1 / fireRate; // 다음 발사 가능한 시간 설정
