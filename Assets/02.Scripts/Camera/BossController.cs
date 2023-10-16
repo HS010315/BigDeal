@@ -4,7 +4,6 @@ public class BossController : MonoBehaviour
 {
     public AutoCameraMovement cameraMovementScript;
     public GameObject shotObject; // Shot 오브젝트 프리팹 설정
-    public float detectionDistance = 10f; // 카메라 멈춤 거리 설정
 
     void Start()
     {
@@ -13,32 +12,46 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        if (IsBossInsideCamera())
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-            if (distanceToPlayer < detectionDistance)
+            // 보스가 카메라 안에 있을 때 Shot 오브젝트 활성화
+            if (shotObject != null && !shotObject.activeSelf)
             {
-                // 플레이어가 보스 근처로 왔을 때 Shot 오브젝트 활성화
-                if (shotObject != null && !shotObject.activeSelf)
-                {
-                    shotObject.SetActive(true);
-                }
-
-                // 카메라 이동을 멈춤
-                cameraMovementScript.StopCameraMovement();
+                shotObject.SetActive(true);
             }
-            else
+
+            // 카메라 이동을 멈춤
+            cameraMovementScript.StopCameraMovement();
+        }
+        else
+        {
+            // 보스가 카메라 밖에 있을 때 Shot 오브젝트 비활성화
+            if (shotObject != null && shotObject.activeSelf)
             {
-                // 플레이어가 멀어졌을 때 Shot 오브젝트 비활성화
-                if (shotObject != null && shotObject.activeSelf)
-                {
-                    shotObject.SetActive(false);
-                }
-
-                // 카메라 이동을 재개
-                //cameraMovementScript.ResumeCameraMovement();
+                shotObject.SetActive(false);
             }
+        }
+    }
+
+    bool IsBossInsideCamera()
+    {
+        // 카메라의 현재 위치와 크기 가져오기
+        Camera mainCamera = Camera.main;
+        Vector3 cameraPosition = mainCamera.transform.position;
+        float cameraHeight = 2f * mainCamera.orthographicSize;
+        float cameraWidth = cameraHeight * mainCamera.aspect;
+
+        // 보스의 위치 확인
+        Vector3 bossPosition = transform.position;
+
+        // 보스가 카메라 안에 있는지 확인
+        if (bossPosition.x >= cameraPosition.x - cameraWidth / 2f && bossPosition.x <= cameraPosition.x + cameraWidth / 2f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
