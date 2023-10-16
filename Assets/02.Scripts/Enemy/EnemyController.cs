@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
-        
+
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -61,14 +61,14 @@ public class EnemyController : MonoBehaviour
 
     void Shoot()
     {
-        if (bulletPrefab != null && bulletSpawnPoint != null)
+        if (bulletPrefab != null && bulletSpawnPoint != null && player != null)
         {
+            Vector3 shootDirection = (player.position - bulletSpawnPoint.position).normalized;
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             Rigidbody bulletRB = bullet.GetComponent<Rigidbody>();
 
             if (bulletRB != null)
             {
-                Vector3 shootDirection = (player.position - bulletSpawnPoint.position).normalized;
                 bulletRB.velocity = shootDirection * bulletSpeed;
             }
         }
