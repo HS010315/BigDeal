@@ -4,10 +4,13 @@ public class BossController : MonoBehaviour
 {
     public AutoCameraMovement cameraMovementScript;
     public GameObject shotObject; // Shot 오브젝트 프리팹 설정
+    public float MaxHealth = 100.0f;
+    public float CurrentHealth;
 
     void Start()
     {
         cameraMovementScript = FindObjectOfType<AutoCameraMovement>();
+        CurrentHealth = MaxHealth;
     }
 
     void Update()
@@ -31,6 +34,24 @@ public class BossController : MonoBehaviour
                 shotObject.SetActive(false);
             }
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        CurrentHealth -= damage;
+
+        if(CurrentHealth <= 0)
+        {
+            BossDefeated();
+        }
+    }
+    public float GetCurrentHealth()
+    {
+        return CurrentHealth;
+    }
+    public float GetMaxHealth()
+    {
+        return MaxHealth;
     }
 
     bool IsBossInsideCamera()
