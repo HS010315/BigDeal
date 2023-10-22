@@ -2614,6 +2614,18 @@ PrefabInstance:
       propertyPath: fireRate
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5468551397798762804, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468551397798762804, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468551397798762804, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5468551397798762805, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
       propertyPath: m_RootOrder
       value: 2

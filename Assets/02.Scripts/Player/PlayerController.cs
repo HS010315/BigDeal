@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private bool isInvincible = false; // 무적 상태 변수 추가
 
 
+
+
     private Rigidbody rb;
     public Collider co;
     private Animator ani;
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Fly()
+    public void Fly()
     {
         float moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
@@ -183,6 +185,4 @@ public class PlayerController : MonoBehaviour
         // 무적 상태 비활성화
         isInvincible = false;
     }
-
-
 }
