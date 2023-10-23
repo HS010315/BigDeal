@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject explosionEffect;
     public Transform respawnPosition;
     private bool isInvincible = false; // 무적 상태 변수 추가
+    public GaugeController gaugeController;
 
 
 
@@ -111,11 +112,19 @@ public class PlayerController : MonoBehaviour
 
     public void Fly()
     {
-        float moveY = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
-        //게이지 전부 소모 시 추락
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (gaugeController.gaugeSlider.value > 0) // 게이지 값 확인
         {
+            float moveY = Input.GetAxis("Vertical");
+            rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
+
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                isFlying = false;
+            }
+        }
+        else
+        {
+            // 게이지가 비어있을 때 플레이어는 비행할 수 없습니다.
             isFlying = false;
         }
     }
