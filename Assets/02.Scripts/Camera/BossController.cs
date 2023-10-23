@@ -78,7 +78,7 @@ public class BossController : MonoBehaviour
 
     void BossDefeated()
     {
-        // 보스 전투가 끝났을 때 카메라 이동을 다시 시작
+        Destroy(gameObject);
         cameraMovementScript.ResumeCameraMovement();
     }
 }
