@@ -39,6 +39,10 @@ public class EnemyController : MonoBehaviour
             Shoot();
             timeSinceLastShot = 0f;
         }
+        if (transform.position.x + 15f < Camera.main.transform.position.x)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
