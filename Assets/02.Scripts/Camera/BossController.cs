@@ -66,7 +66,7 @@ public class BossController : MonoBehaviour
         Vector3 bossPosition = transform.position;
 
         // 보스가 카메라 안에 있는지 확인
-        if (bossPosition.x >= cameraPosition.x - cameraWidth / 2f && bossPosition.x <= cameraPosition.x + cameraWidth / 2f)
+        if (bossPosition.x  >= cameraPosition.x - cameraWidth / 2f && bossPosition.x + 4f <= cameraPosition.x + cameraWidth / 2f)
         {
             return true;
         }
