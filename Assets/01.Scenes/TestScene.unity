@@ -1691,7 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670c995d0e0d1724bbb1911cfd194709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 50
 --- !u!65 &1094461898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
   projectileNum: 10
-  projectileSpeed: 2
+  projectileSpeed: 3
   accelerationSpeed: 0
   useMaxSpeed: 0
   maxSpeed: 0
@@ -2608,8 +2608,8 @@ MonoBehaviour:
   resumeTime: 0
   useAutoRelease: 0
   autoReleaseTime: 10
-  startAngle: 90
-  shiftAngle: -10
+  startAngle: 60
+  shiftAngle: 10
   betweenDelay: 1
 --- !u!4 &1397981220
 Transform:
@@ -3046,6 +3046,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747972594}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1753853723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753853724}
+  - component: {fileID: 1753853725}
+  m_Layer: 0
+  m_Name: ShotMulti
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1753853724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753853723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952659832}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753853725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753853723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a5fce3d21ccbc419361da3b7b15dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
+  projectileNum: 25
+  projectileSpeed: 3
+  accelerationSpeed: 0
+  useMaxSpeed: 0
+  maxSpeed: 0
+  useMinSpeed: 0
+  minSpeed: 0
+  accelerationTurn: 0
+  usePauseAndResume: 0
+  pauseTime: 0
+  resumeTime: 0
+  useAutoRelease: 0
+  autoReleaseTime: 10
+  spiralWayNum: 25
+  startAngle: 180
+  shiftAngle: 5
+  betweenDealy: 0.2
 --- !u!1 &1852475907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,37 +3249,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1870422433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1870422434}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1870422434
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870422433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1952659832}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891673284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,7 +3360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMovementScript: {fileID: 1094461897}
   shotObject: {fileID: 1397981218}
-  MaxHealth: 100
+  shotMultiObject: {fileID: 1753853723}
+  MaxHealth: 10000
   CurrentHealth: 0
 --- !u!54 &1952659828
 Rigidbody:
@@ -3374,7 +3406,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1397981220}
-  - {fileID: 1870422434}
+  - {fileID: 1753853724}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3400,6 +3432,8 @@ MonoBehaviour:
   loop: 1
   shotList:
   - shotObj: {fileID: 1397981219}
+    afterDelay: 2
+  - shotObj: {fileID: 1753853725}
     afterDelay: 2
   updateStep: 0
 --- !u!212 &1952659835
