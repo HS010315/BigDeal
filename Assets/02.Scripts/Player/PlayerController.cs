@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public Transform respawnPosition;
     private bool isInvincible = false; // 무적 상태 변수 추가
     public GaugeController gaugeController;
-    public HealthUI healthUI;
 
 
 
@@ -36,7 +35,7 @@ public class PlayerController : MonoBehaviour
         GameObject mainCamera = Camera.main.gameObject;
         Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
 
-        healthUI = GetComponent<HealthUI>();
+
 
     }
 
@@ -66,8 +65,6 @@ public class PlayerController : MonoBehaviour
 
 
         playerLife--;
-
-        healthUI.SetHealth(playerLife);
         gameObject.SetActive(false);
         isDie = true;
 
