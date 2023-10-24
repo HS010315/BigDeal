@@ -2594,7 +2594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e2978d174974745a989ef83ed30be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8059259800470508484, guid: dbfca11bc211e854b9332e345fefc3c0, type: 3}
+  projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
   projectileNum: 10
   projectileSpeed: 2
   accelerationSpeed: 0
@@ -3309,7 +3309,7 @@ GameObject:
   - component: {fileID: 1952659834}
   - component: {fileID: 1952659835}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Rose(Boss)
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3593,6 +3593,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5468551397798762802, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1598749680590716836, guid: caa3725da5d70944f90745e7a24ca90d, type: 3}
     - target: {fileID: 5468551397798762804, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
       propertyPath: m_Drag
       value: 0
