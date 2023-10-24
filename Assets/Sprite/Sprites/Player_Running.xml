@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Player_Running.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Running0000" x="0" y="0" width="550" height="660"/>
+	<SubTexture name="Running0001" x="550" y="0" width="550" height="660"/>
+	<SubTexture name="Running0002" x="1100" y="0" width="550" height="660"/>
+	<SubTexture name="Running0003" x="1650" y="0" width="550" height="660"/>
+	<SubTexture name="Running0004" x="2200" y="0" width="550" height="660"/>
+	<SubTexture name="Running0005" x="2750" y="0" width="550" height="660"/>
+	<SubTexture name="Running0006" x="3300" y="0" width="550" height="660"/>
+	<SubTexture name="Running0007" x="0" y="660" width="550" height="660"/>
+	<SubTexture name="Running0008" x="550" y="660" width="550" height="660"/>
+	<SubTexture name="Running0009" x="1100" y="660" width="550" height="660"/>
+	<SubTexture name="Running0010" x="1650" y="660" width="550" height="660"/>
+	<SubTexture name="Running0011" x="2200" y="660" width="550" height="660"/>
+	<SubTexture name="Running0012" x="2750" y="660" width="550" height="660"/>
+	<SubTexture name="Running0013" x="3300" y="660" width="550" height="660"/>
+	<SubTexture name="Running0014" x="0" y="1320" width="550" height="660"/>
+	<SubTexture name="Running0015" x="550" y="1320" width="550" height="660"/>
+	<SubTexture name="Running0016" x="1100" y="1320" width="550" height="660"/>
+	<SubTexture name="Running0017" x="1650" y="1320" width="550" height="660"/>
+</TextureAtlas>
