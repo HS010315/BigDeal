@@ -84,10 +84,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   shootInterval: 5
-  bulletPrefab: {fileID: 8059259800470508484, guid: dbfca11bc211e854b9332e345fefc3c0, type: 3}
+  bulletPrefab: {fileID: 8155424913176920611, guid: dd8f146746afb0443bc102fe4659e06d, type: 3}
   bulletSpawnPoint: {fileID: 8614201691933227860}
   bulletSpeed: 8
   health: 50
+  scoreValue: 100
 --- !u!222 &8950652492041832412
 CanvasRenderer:
   m_ObjectHideFlags: 0

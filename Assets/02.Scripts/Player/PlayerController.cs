@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float dashSpeed = 20f;
     public float DashTime = 0.1f;
-    public float DashCoolTime = 5f;
     private bool isDashing = false;
     private Vector3 dashDirection;
     public float jumpForce = 2f;
     private bool canJump = true;
     private bool isFlying = false;
     private bool isDie = false;
-    public int playerLife = 3;
     public GameObject explosionEffect;
     public Transform respawnPosition;
     private bool isInvincible = false; // 무적 상태 변수 추가
     public GaugeController gaugeController;
-
-
+    public int playerLife = 3;
+    public List<Image> heartImages;
+    private float lastDashTime; // 마지막 대쉬 시간 기록
+    public float dashCooldown = 2f; // 대쉬 쿨타임 (예: 2초)
 
 
     private Rigidbody rb;
@@ -35,8 +36,8 @@ public class PlayerController : MonoBehaviour
         GameObject mainCamera = Camera.main.gameObject;
         Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
 
-
-
+        UpdateLifeUI();
+        lastDashTime = -dashCooldown;
     }
 
 
@@ -60,23 +61,37 @@ public class PlayerController : MonoBehaviour
             PlayerDied();
         }
     }
+    
+    void UpdateLifeUI()
+    {
+        for (int i = 0; i < heartImages.Count; i++)
+        {
+            if (i < playerLife)
+            {
+                heartImages[i].enabled = true; // 목숨 수만큼 이미지 활성화
+            }
+            else
+            {
+                heartImages[i].enabled = false; // 남은 이미지 비활성화
+            }
+        }
+    }
+
     public void PlayerDied()
     {
-
-
         playerLife--;
-        gameObject.SetActive(false);
-        isDie = true;
 
         if (playerLife <= 0)
         {
-            GameOver();
+            playerLife = 0;
+            UpdateLifeUI(); // UI 업데이트
+            GameOver(); // 게임오버 처리
         }
         else
         {
-            RespawnPlayer();
+            UpdateLifeUI(); // UI 업데이트
+            RespawnPlayer(); // 플레이어 리스폰 처리
         }
-        return;
     }
 
 
@@ -92,17 +107,20 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
             canJump = false;
         }
-        if (Input.GetKeyDown(KeyCode.L) && !isDashing)
-        {
-            // 플레이어의 입력을 기반으로 대쉬 방향 설정
-            Vector2 dashInput = new Vector2(moveX, moveY);
-            if (dashInput.magnitude > 0.1f) // 입력이 존재할 때만 대쉬
-            {
-                dashDirection = dashInput.normalized;
-                co.enabled = false;
-                StartCoroutine(Dash());
-            }
-        }
+       if (Input.GetKeyDown(KeyCode.L) && !isDashing && Time.time - lastDashTime > dashCooldown)
+{
+    // 대쉬 가능한 경우에만 실행
+    Vector2 dashInput = new Vector2(moveX, moveY);
+    if (dashInput.magnitude > 0.1f)
+    {
+        dashDirection = dashInput.normalized;
+        co.enabled = false;
+        StartCoroutine(Dash());
+
+        // 대쉬 실행 후 마지막 대쉬 시간 기록
+        lastDashTime = Time.time;
+    }
+}
         if (Input.GetKey(KeyCode.LeftShift) && !isFlying)
         {
             isFlying = true;
@@ -147,10 +165,6 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
         isDashing = false;
         co.enabled = true;
-
-        yield return new WaitForSeconds(DashCoolTime);  //왜 쿨타임 적용이 안되지 ?
-        //대쉬 중 무적 판정
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -188,6 +202,8 @@ public class PlayerController : MonoBehaviour
 
         // 2초 후에 무적 상태 비활성화
         StartCoroutine(DisableInvincibility());
+
+        UpdateLifeUI();
     }
 
     private IEnumerator DisableInvincibility()
