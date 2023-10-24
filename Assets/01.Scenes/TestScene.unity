@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 236783270}
   - component: {fileID: 236783269}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Score: 0'
 --- !u!222 &236783270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1914,7 +1914,7 @@ GameObject:
   - component: {fileID: 1153385696}
   - component: {fileID: 1153385695}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: FlyGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3669,6 +3669,22 @@ PrefabInstance:
       propertyPath: respawnPosition
       value: 
       objectReference: {fileID: 1967960454}
+    - target: {fileID: 5468551397798762809, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: heartImages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468551397798762809, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: heartImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 939000325}
+    - target: {fileID: 5468551397798762809, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: heartImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 1395607736}
+    - target: {fileID: 5468551397798762809, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: heartImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 543648901}
     - target: {fileID: 5468551397798762810, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
       propertyPath: m_Name
       value: Player

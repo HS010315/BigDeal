@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class PlayerController : MonoBehaviour
     private bool canJump = true;
     private bool isFlying = false;
     private bool isDie = false;
-    public int playerLife = 3;
     public GameObject explosionEffect;
     public Transform respawnPosition;
     private bool isInvincible = false; // 무적 상태 변수 추가
     public GaugeController gaugeController;
-
+    public int playerLife = 3;
+    public List<Image> heartImages;
 
 
 
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
         GameObject mainCamera = Camera.main.gameObject;
         Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
 
-
+         UpdateLifeUI();
 
     }
 
@@ -60,23 +61,37 @@ public class PlayerController : MonoBehaviour
             PlayerDied();
         }
     }
+    
+    void UpdateLifeUI()
+    {
+        for (int i = 0; i < heartImages.Count; i++)
+        {
+            if (i < playerLife)
+            {
+                heartImages[i].enabled = true;
+            }
+            else
+            {
+                heartImages[i].enabled = false;
+            }
+        }
+    }
+
     public void PlayerDied()
     {
-
-
         playerLife--;
-        gameObject.SetActive(false);
-        isDie = true;
 
         if (playerLife <= 0)
         {
-            GameOver();
+            playerLife = 0;
+            UpdateLifeUI(); // UI 업데이트
+            GameOver(); // 게임오버 처리
         }
         else
         {
-            RespawnPlayer();
+            UpdateLifeUI(); // UI 업데이트
+            RespawnPlayer(); // 플레이어 리스폰 처리
         }
-        return;
     }
 
 
@@ -188,6 +203,8 @@ public class PlayerController : MonoBehaviour
 
         // 2초 후에 무적 상태 비활성화
         StartCoroutine(DisableInvincibility());
+
+        UpdateLifeUI();
     }
 
     private IEnumerator DisableInvincibility()
