@@ -12,14 +12,16 @@ public class EnemyController : MonoBehaviour
     public Transform bulletSpawnPoint;
     public float bulletSpeed = 10f;
     public int health = 100;
+    public int scoreValue = 100;
+
+    private ScoreManager scoreManager;
 
 
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
-
-
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -92,9 +94,12 @@ public class EnemyController : MonoBehaviour
     void Die()
     {
 
-        // gameObject.SetActive(false);
+        scoreManager.AddScore(scoreValue);
         Destroy(gameObject);
     }
+
+
+
 
 
 }
