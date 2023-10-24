@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6694368423757369861}
   - component: {fileID: -6262400309214007489}
   - component: {fileID: -8817742460595818486}
+  - component: {fileID: 3633688448531844207}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -113,7 +114,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.56
+  m_Radius: 2
   m_Height: 3.7
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -130,3 +131,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &3633688448531844207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598749680590716836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a988bd542c34d043a87cbbf5e419cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

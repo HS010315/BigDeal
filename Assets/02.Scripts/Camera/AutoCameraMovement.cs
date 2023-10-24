@@ -33,8 +33,8 @@ public class AutoCameraMovement : MonoBehaviour
     }
 
     // 보스 전투가 끝났을 때 호출되어 카메라 이동을 다시 시작하는 함수
-    public void ResumeCameraMovement()
-    {
-        isBossFight = false;
-    }
+    //public void ResumeCameraMovement()
+    //{
+    //    isBossFight = false;
+    //}
 }

@@ -4,6 +4,7 @@ public class BossController : MonoBehaviour
 {
     public AutoCameraMovement cameraMovementScript;
     public GameObject shotObject; // Shot 오브젝트 프리팹 설정
+    public GameObject shotMultiObject;
     public float MaxHealth = 100.0f;
     public float CurrentHealth;
 
@@ -13,14 +14,18 @@ public class BossController : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
-    void Update()
+   void Update()
     {
         if (IsBossInsideCamera())
         {
-            // 보스가 카메라 안에 있을 때 Shot 오브젝트 활성화
+            // 보스가 카메라 안에 있을 때 Shot 오브젝트와 shotMulti 오브젝트 활성화
             if (shotObject != null && !shotObject.activeSelf)
             {
                 shotObject.SetActive(true);
+            }
+            if (shotMultiObject != null && !shotMultiObject.activeSelf)
+            {
+                shotMultiObject.SetActive(true);
             }
 
             // 카메라 이동을 멈춤
@@ -28,10 +33,14 @@ public class BossController : MonoBehaviour
         }
         else
         {
-            // 보스가 카메라 밖에 있을 때 Shot 오브젝트 비활성화
+            // 보스가 카메라 밖에 있을 때 Shot 오브젝트와 shotMulti 오브젝트 비활성화
             if (shotObject != null && shotObject.activeSelf)
             {
                 shotObject.SetActive(false);
+            }
+            if (shotMultiObject != null && shotMultiObject.activeSelf)
+            {
+                shotMultiObject.SetActive(false);
             }
         }
     }
@@ -79,6 +88,6 @@ public class BossController : MonoBehaviour
     void BossDefeated()
     {
         Destroy(gameObject);
-        cameraMovementScript.ResumeCameraMovement();
+        //cameraMovementScript.ResumeCameraMovement();
     }
 }

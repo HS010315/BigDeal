@@ -22,7 +22,7 @@ public class SGShotCtrl : MonoBehaviour
     public class ShotInfo
     {       
         public SGBaseShot shotObj;
-        public float afterDelay = 0.1f;                             // 0초가 되지 않게 0.1로 초기화
+        public float afterDelay = 3f;                             // 0초가 되지 않게 0.1로 초기화
     }
     
     public SGUtil.AXIS axisMove = SGUtil.AXIS.X_AND_Y;              //XY XZ 기준 설정하는 Enum
@@ -125,7 +125,7 @@ public class SGShotCtrl : MonoBehaviour
             }
             else
             {
-                nowShotInfo.afterDelay = 0.1f;
+                nowShotInfo.afterDelay = 3f;
                 delayTimer = 0f;
                 updateStep = UpdateStep.UpdateIndex;
             }
