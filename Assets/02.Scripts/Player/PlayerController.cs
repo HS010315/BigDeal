@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private Vector3 dashDirection;
     public float jumpForce = 2f;
-    private bool canJump = true;
+    private bool canJump = false;
     private bool isFlying = false;
     private bool isDie = false;
     public GameObject explosionEffect;
@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private float lastDashTime; // 마지막 대쉬 시간 기록
     public float dashCooldown = 2f; // 대쉬 쿨타임 (예: 2초)
     public GameObject gameOverPanel;
+
 
     private Rigidbody rb;
     public Collider co;
@@ -105,7 +106,7 @@ public class PlayerController : MonoBehaviour
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
-            canJump = false;
+            canJump = true;
         }
        if (Input.GetKeyDown(KeyCode.L) && !isDashing && Time.time - lastDashTime > dashCooldown)
 {
