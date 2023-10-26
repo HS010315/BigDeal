@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed = 10f;
     public int health = 100;
     public int scoreValue = 100;
+    public GameObject deathEffectPrefab;
 
     private ScoreManager scoreManager;
 
@@ -93,6 +94,11 @@ public class EnemyController : MonoBehaviour
     // 적 오브젝트를 제거하는 함수
     void Die()
     {
+        if (deathEffectPrefab != null)
+        {
+            // 파티클 효과 생성
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        }
 
         scoreManager.AddScore(scoreValue);
         Destroy(gameObject);
