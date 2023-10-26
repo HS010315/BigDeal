@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11492264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 172.5, y: -0.28, z: 3.193392}
+  m_LocalPosition: {x: 171.08, y: -0.28, z: 3.193392}
   m_LocalScale: {x: 2.844466, y: 0.35357, z: 0.88905704}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3763,9 +3763,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
-  projectileNum: 10
-  projectileSpeed: 3
-  accelerationSpeed: 0
+  projectileNum: 5
+  projectileSpeed: 10
+  accelerationSpeed: 10
   useMaxSpeed: 0
   maxSpeed: 0
   useMinSpeed: 0
@@ -3775,8 +3775,8 @@ MonoBehaviour:
   pauseTime: 0
   resumeTime: 0
   useAutoRelease: 0
-  autoReleaseTime: 10
-  startAngle: 60
+  autoReleaseTime: 5
+  startAngle: 80
   shiftAngle: 10
   betweenDelay: 1
 --- !u!4 &1397981220
@@ -4609,9 +4609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
-  projectileNum: 25
-  projectileSpeed: 3
-  accelerationSpeed: 0
+  projectileNum: 30
+  projectileSpeed: 5
+  accelerationSpeed: 5
   useMaxSpeed: 0
   maxSpeed: 0
   useMinSpeed: 0
@@ -4622,7 +4622,7 @@ MonoBehaviour:
   resumeTime: 0
   useAutoRelease: 0
   autoReleaseTime: 10
-  spiralWayNum: 25
+  spiralWayNum: 30
   startAngle: 180
   shiftAngle: 5
   betweenDealy: 0.2
@@ -4995,7 +4995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952659826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 176.53, y: 0.34, z: -0.04}
+  m_LocalPosition: {x: 180.41, y: -1.01, z: -0.04}
   m_LocalScale: {x: 1.9, y: 1.9, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
