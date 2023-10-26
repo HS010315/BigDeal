@@ -103,18 +103,194 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Player_Jumping_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1395
+        width: 347
+        height: 631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6f1f9d7426d39429716acb4682feab
+      internalID: -1647538895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_1
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1399
+        width: 355
+        height: 618
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca2ef8933c82604c96c37af8dee29bd
+      internalID: -1858432095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_2
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 1404
+        width: 358
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb28d50a774aab4385647bfebc3751d
+      internalID: -108735077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 750
+        width: 361
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ed8876108860c45a01baa4e92d8c96
+      internalID: 57232453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_4
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 751
+        width: 359
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42d7a6671fd83647b7f3cb7eb3e134e
+      internalID: 657002768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_5
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 724
+        width: 355
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c9b2ba9bebc4a4b832e29cf79fcd83
+      internalID: -1251627035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_6
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 78
+        width: 353
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64c902df74d0ca4a90845ceca9ee2a9
+      internalID: -1952816200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jumping_7
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 72
+        width: 353
+        height: 634
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44a62c7ff1fd024589453f064f7b4a8
+      internalID: 1355175667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3facd3863b420cb4b97bbf41e0a39880
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_Jumping_0: -1647538895
+      Player_Jumping_1: -1858432095
+      Player_Jumping_2: -108735077
+      Player_Jumping_3: 57232453
+      Player_Jumping_4: 657002768
+      Player_Jumping_5: -1251627035
+      Player_Jumping_6: -1952816200
+      Player_Jumping_7: 1355175667
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
