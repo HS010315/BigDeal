@@ -19,7 +19,7 @@ public class BossPattern : MonoBehaviour
 
     void Update()
     {
-        if (!isPounded1 && !isPounded2 && boss != null && hasPoundedPillars != true)
+        if (!isPounded1 && !isPounded2 && boss != null && hasPoundedPillars != true && boss.CurrentHealth <= boss.MaxHealth)
         {
             PoundPillars();
             hasPoundedPillars = true;
