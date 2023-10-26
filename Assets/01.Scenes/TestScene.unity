@@ -2391,7 +2391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094461893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.34, y: -2.45, z: -10}
+  m_LocalPosition: {x: -16.34, y: -1.15, z: -11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4135,9 +4135,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 96dd4606072d5fd41806fd8154481c57, type: 3}
+  m_audioClip: {fileID: 8300000, guid: baba072ac6a28074b9e73dbb0b0cbb1c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.146
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5450,6 +5450,10 @@ PrefabInstance:
     - target: {fileID: 2972114148907486480, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
       propertyPath: jumpForce
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972114148907486480, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
+      propertyPath: moveSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2972114148907486480, guid: 88bf35343869c824ab81ea8d657aac7b, type: 3}
       propertyPath: gameManager
