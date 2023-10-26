@@ -3342,8 +3342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
   projectileNum: 5
-  projectileSpeed: 10
-  accelerationSpeed: 10
+  projectileSpeed: 20
+  accelerationSpeed: 0
   useMaxSpeed: 0
   maxSpeed: 0
   useMinSpeed: 0
@@ -4282,8 +4282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
   projectileNum: 30
-  projectileSpeed: 5
-  accelerationSpeed: 5
+  projectileSpeed: 10
+  accelerationSpeed: 0
   useMaxSpeed: 0
   maxSpeed: 0
   useMinSpeed: 0
