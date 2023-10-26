@@ -7,6 +7,7 @@ public class BossController : MonoBehaviour
     public GameObject shotMultiObject;
     public float MaxHealth = 100.0f;
     public float CurrentHealth;
+    public GameObject gameClearPanel;
 
     void Start()
     {
@@ -89,5 +90,10 @@ public class BossController : MonoBehaviour
     {
         Destroy(gameObject);
         //cameraMovementScript.ResumeCameraMovement();
+        if (gameClearPanel != null)
+        {
+            gameClearPanel.SetActive(true);
+
+        }
     }
 }
