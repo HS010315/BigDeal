@@ -16,6 +16,7 @@ public class RestartButton : MonoBehaviour
             gameOverPanel.SetActive(false);
         }
         DestroyAllEnemies();
+        DestroyAllBullet();
     }
     private void DestroyAllEnemies()
     {
@@ -24,6 +25,15 @@ public class RestartButton : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             Destroy(enemy);
+        }
+    }
+
+    private void DestroyAllBullet()
+    {
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach(GameObject bullet in bullets)
+        {
+            Destroy(bullet);
         }
     }
 }
