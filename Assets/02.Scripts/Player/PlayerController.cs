@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float flySpeed = 7f;
     public float dashSpeed = 20f;
     public float DashTime = 0.1f;
     private bool isDashing = false;
@@ -106,7 +107,7 @@ public class PlayerController : MonoBehaviour
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
-            canJump = true;
+            canJump = false;
         }
        if (Input.GetKeyDown(KeyCode.L) && !isDashing && Time.time - lastDashTime > dashCooldown)
 {
@@ -136,8 +137,9 @@ public class PlayerController : MonoBehaviour
     {
         if (gaugeController.gaugeSlider.value > 0) // 게이지 값 확인
         {
+            float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
-            rb.velocity = new Vector3(rb.velocity.x, moveY * moveSpeed, rb.velocity.z);
+            rb.velocity = new Vector3(moveX * flySpeed, moveY * flySpeed, rb.velocity.z);
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
