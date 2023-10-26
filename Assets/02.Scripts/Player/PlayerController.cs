@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public List<Image> heartImages;
     private float lastDashTime; // 마지막 대쉬 시간 기록
     public float dashCooldown = 2f; // 대쉬 쿨타임 (예: 2초)
+    public GameObject gameOverPanel;
 
     private Rigidbody rb;
     public Collider co;
@@ -183,7 +184,7 @@ public class PlayerController : MonoBehaviour
         //UI 팝업 후 Restart 버튼으로 씬 처음부터 다시 불러옴. + 추가 요소 필요
         Destroy(gameObject);
         Debug.Log("die");
-        
+        gameOverPanel.SetActive(true);
     }
 
     private void RespawnPlayer()

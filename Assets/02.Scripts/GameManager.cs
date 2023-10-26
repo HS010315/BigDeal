@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : GenericSingleton<GameManager>
 {
@@ -8,6 +9,9 @@ public class GameManager : GenericSingleton<GameManager>
     float initialDelay = 2.0f;
     public int playerScore = 0; // 플레이어 스코어 등록
     private bool bossInCameraView = false;
+    private bool isGameActive = true;
+    private bool isGameManagerActive = false;
+
 
     public void IncreaseScore(int amount) // 함수를 통해서 증가시켜준다
     {
@@ -60,6 +64,35 @@ public class GameManager : GenericSingleton<GameManager>
                 bossInCameraView = true;
                 CancelInvoke("SpawnEnemy");
             }
+        }
+    }
+
+    public void SetGameActive(bool active)
+    {
+        isGameActive = active;
+
+        if (isGameActive)
+        {
+            // 게임이 활성 상태일 때 적 생성 시작
+            InvokeRepeating("SpawnEnemy", initialDelay, spawnInterval);
+        }
+        else
+        {
+            // 게임이 비활성 상태일 때 적 생성 중지
+            CancelInvoke("SpawnEnemy");
+        }
+    }
+
+    void Awake()
+    {
+        // 현재 씬의 이름이 "1번 씬의 이름"과 같을 때 GameManager를 활성화
+        if (SceneManager.GetActiveScene().name == "1번 씬의 이름")
+        {
+            isGameManagerActive = true;
+        }
+        else
+        {
+            isGameManagerActive = false;
         }
     }
 }
