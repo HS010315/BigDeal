@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Player_Jumping_while_air.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="jumping_while_air0000" x="0" y="0" width="550" height="660"/>
+	<SubTexture name="jumping_while_air0001" x="550" y="0" width="550" height="660"/>
+	<SubTexture name="jumping_while_air0002" x="1100" y="0" width="550" height="660"/>
+</TextureAtlas>
