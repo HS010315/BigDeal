@@ -197,15 +197,10 @@ public class PlayerController : MonoBehaviour
             gameObject.SetActive(true);
             isDie = false;
         }
-        transform.position = respawnPosition.position;
+        transform.position = new Vector3(respawnPosition.position.x, respawnPosition.position.y, 0); // Z 축 값을 0으로 설정
         Debug.Log("respawn");
-
-        // 리스폰 후 무적 상태 활성화
         isInvincible = true;
-
-        // 2초 후에 무적 상태 비활성화
         StartCoroutine(DisableInvincibility());
-
         UpdateLifeUI();
     }
 
