@@ -874,8 +874,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pillarPrefab: {fileID: 7236635061605257504, guid: be53fa9051f850d498864701ea8460ba, type: 3}
+  spawnPoint1: {fileID: 0}
+  spawnPoint2: {fileID: 0}
   targetTransform1: {fileID: 2136383227}
   targetTransform2: {fileID: 866351377}
+  moveSpeed: 5
   destroyDelay: 100
   boss: {fileID: 1211355579}
 --- !u!114 &1211355579
@@ -895,6 +898,7 @@ MonoBehaviour:
   shotMultiObject: {fileID: 0}
   MaxHealth: 100
   CurrentHealth: 0
+  gameClearPanel: {fileID: 0}
 --- !u!1 &1367370360
 GameObject:
   m_ObjectHideFlags: 0
