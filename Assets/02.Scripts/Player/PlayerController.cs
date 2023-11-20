@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     public Collider co;
-    private Animator ani;
+    public Animator ani;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
