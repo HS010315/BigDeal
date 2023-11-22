@@ -26,6 +26,15 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOverPanel;
 
 
+    public Transform bulletSpawnPoint; // 총알 발사 위치를 지정하기 위한 Transform 컴포넌트
+    public GameObject bulletPrefab;    // 총알 프리팹
+    public float bulletSpeed = 20f;    // 총알 속도
+    public float fireRate = 0.5f;      // 발사 간격 (초당 발사 횟수)
+    private float nextFireTime = 0f;   // 다음 발사 가능한 시간
+
+    public int damage = 10;
+
+
     private Rigidbody rb;
     public Collider co;
     public Animator ani;
@@ -104,33 +113,64 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
+        /*if (moveX != 0 || moveY != 0)
+        {
+            ani.SetBool("Run", true);
+        }
+
+        else
+        {
+            ani.SetBool("Run", false);
+        }*/
+
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
+            //ani.SetTrigger("Jump");
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
             canJump = false;
         }
        if (Input.GetKeyDown(KeyCode.L) && !isDashing && Time.time - lastDashTime > dashCooldown)
-{
-    // 대쉬 가능한 경우에만 실행
-    Vector2 dashInput = new Vector2(moveX, moveY);
-    if (dashInput.magnitude > 0.1f)
-    {
-        dashDirection = dashInput.normalized;
-        co.enabled = false;
-        StartCoroutine(Dash());
+        {
+            // 대쉬 가능한 경우에만 실행
+            Vector2 dashInput = new Vector2(moveX, moveY);
+            if (dashInput.magnitude > 0.1f)
+            {
+                dashDirection = dashInput.normalized;
+                co.enabled = false;
+                StartCoroutine(Dash());
 
-        // 대쉬 실행 후 마지막 대쉬 시간 기록
-        lastDashTime = Time.time;
-    }
-}
+                // 대쉬 실행 후 마지막 대쉬 시간 기록
+                lastDashTime = Time.time;
+            }
+        }
         if (Input.GetKey(KeyCode.LeftShift) && !isFlying)
         {
+            //ani.SetBool("Fly", true);
             isFlying = true;
         }
+        /*else 
+        {
+            ani.SetBool("Fly", false);
+        }*/
         if (isFlying)
         {
             Fly();
         }
+
+        if (!isFlying && Input.GetKey(KeyCode.K) && Time.time > nextFireTime)
+        {
+            ani.SetBool("FlyAttack", true);
+            Shoot();
+            nextFireTime = Time.time + 1 / fireRate;
+        }
+
+        if(isFlying && Input.GetKey(KeyCode.K) && Time.time > nextFireTime)
+        {
+            ani.SetBool("FlyAttack", true);
+            Shoot();
+            nextFireTime = Time.time + 1 / fireRate;
+        }
+
     }
 
     public void Fly()
@@ -168,6 +208,19 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
         isDashing = false;
         co.enabled = true;
+    }
+
+    void Shoot()
+    {
+        // 총알을 생성하고 발사 위치로 이동시킵니다.
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+        // 총알에 Rigidbody를 추가하고 속도를 설정하여 발사합니다.
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.velocity = bulletSpawnPoint.right * bulletSpeed;
+
+        // 총알이 화면 밖으로 나가면 일정 시간 후에 파괴됩니다.
+        Destroy(bullet, 3f);
     }
 
     private void OnCollisionEnter(Collision collision)
