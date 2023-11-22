@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BossController : MonoBehaviour
 {
@@ -11,12 +13,21 @@ public class BossController : MonoBehaviour
     public GameObject woodColumnPrefab;
     public Transform dropPosition;
     public float fallingSpeed = 5f;
+    public Slider healthSlider;
 
     void Start()
     {
         cameraMovementScript = FindObjectOfType<AutoCameraMovement>();
         CurrentHealth = MaxHealth;
         InvokeRepeating("DropWoodColumn", 0f, 10f);
+
+        cameraMovementScript = FindObjectOfType<AutoCameraMovement>();
+        CurrentHealth = MaxHealth;
+        InvokeRepeating("DropWoodColumn", 0f, 10f);
+
+        // Slider 초기화
+        healthSlider.maxValue = MaxHealth;
+        healthSlider.value = MaxHealth;
     }
 
     void Update()
@@ -52,6 +63,8 @@ public class BossController : MonoBehaviour
                 shotMultiObject.SetActive(false);
             }
         }
+
+        healthSlider.value = CurrentHealth;
     }
 
     // TakeDamage 메서드 추가
@@ -63,6 +76,8 @@ public class BossController : MonoBehaviour
         {
             BossDefeated();
         }
+
+        healthSlider.value = CurrentHealth;
     }
 
     public float GetCurrentHealth()
