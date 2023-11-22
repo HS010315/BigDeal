@@ -2904,7 +2904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670c995d0e0d1724bbb1911cfd194709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
+  moveSpeed: 5
   bossHealthSlider: {fileID: 2028922832}
 --- !u!65 &1094461898
 BoxCollider:
@@ -6126,6 +6126,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8578cb9baabc6214995a90cc1ca94e60, type: 3}
   m_PrefabInstance: {fileID: 217887545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2122850848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5446017953100061352, guid: 4a991880f3fd5bc46917ebb1e795863b, type: 3}
+  m_PrefabInstance: {fileID: 1749635667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122850849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122850848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53b0365f7544954ca85c25850716152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCanvas: {fileID: 0}
+  optionCanvas: {fileID: 490694194}
 --- !u!1001 &2130583861
 PrefabInstance:
   m_ObjectHideFlags: 0
