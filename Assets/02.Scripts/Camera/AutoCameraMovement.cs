@@ -6,6 +6,7 @@ public class AutoCameraMovement : MonoBehaviour
     public float moveSpeed = 5f; // 카메라 이동 속도
     private bool isBossFight = false; // 보스 전투 중인지 여부를 나타내는 플래그
 
+
     public Slider bossHealthSlider;
 
     void Update()
@@ -51,6 +52,9 @@ public class AutoCameraMovement : MonoBehaviour
             bossHealthSlider.gameObject.SetActive(true);
         }
     }
+
+
+
 
     // 보스 전투가 끝났을 때 호출되어 카메라 이동을 다시 시작하는 함수
     //public void ResumeCameraMovement()
