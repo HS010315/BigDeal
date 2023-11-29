@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 2f; // 대쉬 쿨타임 (예: 2초)
     public GameObject gameOverPanel;
 
+    public ParticleSystem waterbomb;
+
 
     public Transform bulletSpawnPoint; // 총알 발사 위치를 지정하기 위한 Transform 컴포넌트
     public GameObject bulletPrefab;    // 총알 프리팹
@@ -146,17 +148,29 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && !isFlying)
         {
             //ani.SetBool("Fly", true);
+            if (!waterbomb.isPlaying)
+            {
+                waterbomb.Play();
+            }
             isFlying = true;
         }
+
         /*else 
         {
             ani.SetBool("Fly", false);
         }*/
         if (isFlying)
         {
+
             Fly();
         }
-
+        if(!isFlying)
+        {
+            if (waterbomb.isPlaying)
+            {
+                waterbomb.Stop();
+            }
+        }
         if (!isFlying && Input.GetKey(KeyCode.K) && Time.time > nextFireTime)
         {
             ani.SetBool("FlyAttack", true);
@@ -175,7 +189,7 @@ public class PlayerController : MonoBehaviour
 
     public void Fly()
     {
-        if (gaugeController.gaugeSlider.value > 0) // 게이지 값 확인
+        if (gaugeController.gaugeSlider.value > 3) // 게이지 값 확인
         {
             float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
@@ -185,6 +199,7 @@ public class PlayerController : MonoBehaviour
             {
                 isFlying = false;
             }
+
         }
         else
         {
