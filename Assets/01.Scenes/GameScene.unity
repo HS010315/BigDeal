@@ -3404,6 +3404,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7142747532047669494, guid: 75ff95f6941e66f4daa6c2b59e41d530, type: 3}
+      propertyPath: ForceModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142747532047669494, guid: 75ff95f6941e66f4daa6c2b59e41d530, type: 3}
       propertyPath: InitialModule.rotation3D
       value: 0
       objectReference: {fileID: 0}
@@ -3421,7 +3425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142747532047669494, guid: 75ff95f6941e66f4daa6c2b59e41d530, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7142747532047669494, guid: 75ff95f6941e66f4daa6c2b59e41d530, type: 3}
       propertyPath: InitialModule.randomizeRotationDirection
