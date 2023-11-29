@@ -33,7 +33,7 @@ public class GaugeController : MonoBehaviour
         }
         else
         {
-            gaugeSlider.value += 5 * Time.deltaTime; // 왼쪽 쉬프트 키가 떼어져 있을 때 초당 10씩 증가시킴
+            gaugeSlider.value += 3 * Time.deltaTime; // 왼쪽 쉬프트 키가 떼어져 있을 때 초당 증가시킴
         }
 
         // 게이지가 범위를 벗어나지 않도록 보정
