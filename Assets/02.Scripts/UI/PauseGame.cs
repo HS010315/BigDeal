@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
     private bool isPaused = false;
+    public GameObject restartButton;
+    public GameObject OptionCanvas;
 
     void Update()
     {
@@ -11,6 +14,18 @@ public class PauseGame : MonoBehaviour
         {
             TogglePause();
         }
+    }
+
+    public void OnClickRestartButton()
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 1f;
+        }
+
+        SceneManager.LoadScene(1);
+        OptionCanvas.gameObject.SetActive(false);
+        isPaused = false;
     }
 
     void TogglePause()
@@ -30,4 +45,6 @@ public class PauseGame : MonoBehaviour
 
         Debug.Log("Game paused: " + isPaused);
     }
+
+
 }
