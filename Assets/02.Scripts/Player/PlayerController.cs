@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
-        /*if (moveX != 0 || moveY != 0)
+        if (moveX != 0 || moveY != 0 && !isFlying)
         {
             ani.SetBool("Run", true);
         }
@@ -123,11 +123,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             ani.SetBool("Run", false);
-        }*/
+        }
 
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
-            //ani.SetTrigger("Jump");
+            ani.SetTrigger("Jump");
             rb.AddForce(new Vector2(0, jumpForce), ForceMode.Impulse);
             canJump = false;
         }
@@ -145,42 +145,31 @@ public class PlayerController : MonoBehaviour
                 lastDashTime = Time.time;
             }
         }
-        if (Input.GetKey(KeyCode.LeftShift) && !isFlying)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            //ani.SetBool("Fly", true);
-            if (!waterbomb.isPlaying)
-            {
-                waterbomb.Play();
-            }
+            ani.SetBool("Fly", true);
+            waterbomb.Play();
             isFlying = true;
         }
-
-        /*else 
+        else
         {
             ani.SetBool("Fly", false);
-        }*/
+            waterbomb.Stop();
+        }
         if (isFlying)
         {
-
             Fly();
         }
-        if(!isFlying)
-        {
-            if (waterbomb.isPlaying)
-            {
-                waterbomb.Stop();
-            }
-        }
+
         if (!isFlying && Input.GetKey(KeyCode.K) && Time.time > nextFireTime)
         {
-            ani.SetBool("FlyAttack", true);
+            ani.SetBool("Run", true);
             Shoot();
             nextFireTime = Time.time + 1 / fireRate;
         }
 
         if(isFlying && Input.GetKey(KeyCode.K) && Time.time > nextFireTime)
         {
-            ani.SetBool("FlyAttack", true);
             Shoot();
             nextFireTime = Time.time + 1 / fireRate;
         }
