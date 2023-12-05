@@ -7,6 +7,11 @@ public class PauseGame : MonoBehaviour
     public GameObject restartButton;
     public GameObject OptionCanvas;
 
+
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
     void Update()
     {
         // "Esc" 키를 눌렀을 때 게임 일시 정지/재개 토글
