@@ -28,6 +28,13 @@ public class PauseGame : MonoBehaviour
         isPaused = false;
     }
 
+    public void OnClickBackButton()
+    {
+        Time.timeScale = 1f;
+        OptionCanvas.SetActive(false);
+        isPaused = false;
+    }
+
     void TogglePause()
     {
         // isPaused °ª ¹ÝÀü
