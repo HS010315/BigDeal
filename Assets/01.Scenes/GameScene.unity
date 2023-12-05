@@ -1635,8 +1635,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5446017952424167681}
-        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+      - m_Target: {fileID: 5446017952424167679}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -3672,7 +3672,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5446017952424167679}
+    - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6045704086903878089, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
 --- !u!224 &1092781283 stripped
 RectTransform:
@@ -8268,6 +8281,18 @@ PrefabInstance:
     - target: {fileID: 6045704086197331327, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
       propertyPath: m_Name
       value: gameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5446017952424167679}
+    - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}

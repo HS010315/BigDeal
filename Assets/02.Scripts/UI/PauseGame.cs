@@ -53,5 +53,46 @@ public class PauseGame : MonoBehaviour
         Debug.Log("Game paused: " + isPaused);
     }
 
+    public void GoToMainMenu()
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 1f;
+        }
+        SceneManager.LoadScene(0);
+        OptionCanvas.gameObject.SetActive(false);
+        isPaused = false;
+        DestroyAllEnemies();
+        DestroyAllBullet();
+        DestroyAllBoss();
+    }
+    private void DestroyAllEnemies()
+    {
+        // 모든 enemy 태그를 가진 오브젝트를 찾아서 삭제
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+    }
+
+    private void DestroyAllBoss()
+    {
+        GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
+        foreach (GameObject boss in bosses)
+        {
+            Destroy(boss);
+        }
+    }
+
+    private void DestroyAllBullet()
+    {
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (GameObject bullet in bullets)
+        {
+            Destroy(bullet);
+        }
+    }
+
 
 }
