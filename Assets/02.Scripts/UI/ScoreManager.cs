@@ -22,6 +22,6 @@ public class ScoreManager : MonoBehaviour
     void UpdateScoreUI()
     {
         // UI Text에 현재 점수를 업데이트
-        scoreText.text = "Score: " + score;
+        scoreText.text = " " + score;
     }
 }
