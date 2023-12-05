@@ -5,10 +5,10 @@ public class RestartButton : MonoBehaviour
 {
     public GameObject gameOverPanel;
 
-    public void RestartGame()
+    public void NextLevelButton()
     {
         // 게임 재시작 코드 (예: 0번 씬 다시 로드)
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
 
         // 게임 오버 패널 비활성화
         if (gameOverPanel != null)

@@ -3572,6 +3572,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1143336399}
     m_Modifications:
+    - target: {fileID: 6045704085568729954, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_Text
+      value: Next Level
+      objectReference: {fileID: 0}
     - target: {fileID: 6045704086110594464, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
       propertyPath: m_Text
       value: Game Clear
@@ -3670,7 +3674,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6045704086197331327, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704086903878088, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 208.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704086903878088, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264634, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_Name
+      value: NextLevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264635, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 208.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264635, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
@@ -8268,6 +8296,10 @@ PrefabInstance:
     - target: {fileID: 6045704086197331327, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
       propertyPath: m_Name
       value: gameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704086197331327, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
