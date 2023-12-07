@@ -20,6 +20,15 @@ public class AutoCameraMovement : MonoBehaviour
         {
             ActivateBossHPbar();
         }
+
+        if(Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            moveSpeed = 70f;            //카메라 이동 속도 가속 빌드 시 수정 필요
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            moveSpeed = 5f;             //카메라 이동 속도 복구 빌드 시 수정 필요
+        }
     }
 
 

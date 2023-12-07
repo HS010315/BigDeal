@@ -1692,9 +1692,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5684084262942716902, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684084262996701744, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5684084262996701744, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684084262996701744, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5684084263185380825, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
       propertyPath: m_Pivot.x
@@ -1788,6 +1800,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684084263403347554, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5684084263403347555, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.013475
@@ -1841,8 +1857,16 @@ PrefabInstance:
       value: 175.97011
       objectReference: {fileID: 0}
     - target: {fileID: 5684084264945811798, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684084264945811798, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684084264945811798, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c319cbd7cf500f40bedbe7d44adefed, type: 3}
@@ -3719,6 +3743,18 @@ PrefabInstance:
       value: GoToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6045704086903878094, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5446017952424167679}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickRestartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PauseGame, Assembly-CSharp
       objectReference: {fileID: 0}
