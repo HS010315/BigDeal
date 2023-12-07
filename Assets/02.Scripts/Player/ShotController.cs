@@ -18,6 +18,15 @@ public class ShotController : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
+            else
+            {
+                // EnemyController가 없는 경우 EnemyController1을 찾아서 데미지를 입힙니다.
+                EnemyController1 enemy1 = hitObject.GetComponent<EnemyController1>();
+                if (enemy1 != null)
+                {
+                    enemy1.TakeDamage(damage);
+                }
+            }
 
             // 총알 오브젝트를 제거합니다.
             Destroy(gameObject);
