@@ -3746,6 +3746,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PauseGame, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5446017952424167679}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickRestartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045704087029264633, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6045704086903878089, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf1ee1a02ed29b747b6887f09a0a5062, type: 3}

@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public Collider co;
     public Animator ani;
+
+    public float invincibilityDuration = 3f; // 무적 지속 시간
+    public float blinkInterval = 0.2f;        // 깜빡이는 간격
+    public Renderer characterRenderer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,7 +54,9 @@ public class PlayerController : MonoBehaviour
 
         UpdateLifeUI();
         lastDashTime = -dashCooldown;
+        characterRenderer = GetComponent<Renderer>();
     }
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -262,6 +269,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("respawn");
         isInvincible = true;
         StartCoroutine(DisableInvincibility());
+        StartCoroutine(BlinkEffect());
         UpdateLifeUI();
     }
 
@@ -271,5 +279,20 @@ public class PlayerController : MonoBehaviour
 
         // 무적 상태 비활성화
         isInvincible = false;
+    }
+
+    private IEnumerator BlinkEffect()
+    {
+        while (isInvincible)
+        {
+            // 캐릭터를 보이거나 숨기기
+            characterRenderer.enabled = !characterRenderer.enabled;
+
+            // 일정 간격 동안 기다리기
+            yield return new WaitForSeconds(blinkInterval);
+        }
+
+        // 무적 상태가 해제되면 캐릭터를 다시 보이게 만듦
+        characterRenderer.enabled = true;
     }
 }
