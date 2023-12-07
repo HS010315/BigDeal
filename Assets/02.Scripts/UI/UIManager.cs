@@ -12,7 +12,11 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        startCanvas.gameObject.SetActive(true);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            startCanvas.gameObject.SetActive(true);
+        }
+
         Button exitButton = GetComponent<Button>();
 
         // 만약 버튼이 존재하면
