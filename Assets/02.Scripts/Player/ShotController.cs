@@ -39,6 +39,14 @@ public class ShotController : MonoBehaviour
             {
                 Boss.TakeDamage(damage);
             }
+            else
+            {
+                BossController2 Boss1 = hitObject.GetComponent<BossController2>();
+                if (Boss1 != null)
+                {
+                    Boss1.TakeDamage(damage);
+                }
+            }
 
             // 총알 오브젝트를 제거합니다.
             Destroy(gameObject);
