@@ -14,6 +14,7 @@ public class BossController : MonoBehaviour
     public Transform dropPosition;
     public float fallingSpeed = 5f;
     public Slider healthSlider;
+    public Animator roseani;
 
     void Start()
     {
@@ -127,6 +128,7 @@ public class BossController : MonoBehaviour
         // 보스가 카메라 안에 있을 때만 실행
         if (IsBossInsideCamera())
         {
+            roseani.SetTrigger("Attack");
             // WarningLine 컴포넌트를 가져옴
             WarningLine warningLine = GetComponent<WarningLine>();
 
