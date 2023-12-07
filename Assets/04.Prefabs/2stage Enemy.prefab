@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4848098937606987097}
   - component: {fileID: 8030580229802375945}
   - component: {fileID: 6855283943835981234}
-  - component: {fileID: 3555374556452707639}
   - component: {fileID: 700998080917819701}
   m_Layer: 0
   m_Name: 2stage Enemy
@@ -33,8 +32,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6257327429101516929}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,22 +130,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3555374556452707639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73077413698245071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50629263d7f204c4db8ceb3844782e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
-  bulletSpeed: 5
-  shootInterval: 2
 --- !u!114 &700998080917819701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,70 +146,3 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 170553090172552931}
   bulletSpeed: 5
   shootInterval: 2
---- !u!1 &6817203475230636501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6257327429101516929}
-  - component: {fileID: 6660103901287713791}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6257327429101516929
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6817203475230636501}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 170553090172552931}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6660103901287713791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6817203475230636501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a5fce3d21ccbc419361da3b7b15dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8155424913176920611, guid: dd8f146746afb0443bc102fe4659e06d, type: 3}
-  projectileNum: 10
-  projectileSpeed: 2
-  accelerationSpeed: 0
-  useMaxSpeed: 0
-  maxSpeed: 0
-  useMinSpeed: 0
-  minSpeed: 0
-  accelerationTurn: 0
-  usePauseAndResume: 0
-  pauseTime: 0
-  resumeTime: 0
-  useAutoRelease: 0
-  autoReleaseTime: 10
-  spiralWayNum: 4
-  startAngle: 180
-  shiftAngle: 5
-  betweenDealy: 0.2
