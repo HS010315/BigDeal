@@ -119,7 +119,9 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha0))
         {
             playerLife = 100;                       //체력 100 설정 발표 용 빌드 시 삭제
+            damage = 100;
         }
+
                 
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");

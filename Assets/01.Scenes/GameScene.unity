@@ -6804,13 +6804,14 @@ MonoBehaviour:
   cameraMovementScript: {fileID: 1094461897}
   shotObject: {fileID: 1397981218}
   shotMultiObject: {fileID: 1753853723}
-  MaxHealth: 10000
+  MaxHealth: 1000
   CurrentHealth: 0
   gameClearPanel: {fileID: 6045704087285653917}
   woodColumnPrefab: {fileID: 250206807344389909, guid: 685ddb7e326d16a4dadb7bae9a566427, type: 3}
   dropPosition: {fileID: 1762699196}
   fallingSpeed: 3
   healthSlider: {fileID: 2028922832}
+  roseani: {fileID: 0}
 --- !u!54 &1952659828
 Rigidbody:
   m_ObjectHideFlags: 0
