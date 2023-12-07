@@ -12784,7 +12784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2432985281636544556, guid: bfcea72ea62623a4d9ffe7713ddf77fa, type: 3}
-  projectileNum: 100
+  projectileNum: 200
   projectileSpeed: 3
   accelerationSpeed: 0
   useMaxSpeed: 0
@@ -12797,10 +12797,10 @@ MonoBehaviour:
   resumeTime: 0
   useAutoRelease: 0
   autoReleaseTime: 10
-  spiralWayNum: 20
+  spiralWayNum: 100
   startAngle: 180
   shiftAngle: 5
-  betweenDealy: 0.2
+  betweenDealy: 0.3
   bossAnimator: {fileID: 1466971923}
 --- !u!4 &1841226785
 Transform:
