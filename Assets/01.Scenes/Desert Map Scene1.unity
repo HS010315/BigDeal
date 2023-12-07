@@ -9548,7 +9548,7 @@ MonoBehaviour:
   cameraMovementScript: {fileID: 1094461897}
   shotObject: {fileID: 1493864967}
   shotMultiObject: {fileID: 1841226783}
-  MaxHealth: 1000
+  MaxHealth: 5000
   CurrentHealth: 0
   gameClearPanel: {fileID: 6045704087285653917}
   woodColumnPrefab: {fileID: 250206807344389909, guid: 685ddb7e326d16a4dadb7bae9a566427, type: 3}
@@ -9744,7 +9744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e2978d174974745a989ef83ed30be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
+  projectilePrefab: {fileID: 2432985281636544556, guid: aeb9b30a3f3d2a14f9c27a57b1cfc40d, type: 3}
   projectileNum: 5
   projectileSpeed: 10
   accelerationSpeed: 0
@@ -10920,7 +10920,7 @@ GameObject:
   - component: {fileID: 1692381056}
   - component: {fileID: 1692381055}
   - component: {fileID: 1692381054}
-  - component: {fileID: 1692381053}
+  - component: {fileID: 1692381057}
   m_Layer: 0
   m_Name: Cube (84)
   m_TagString: Ground
@@ -10943,19 +10943,6 @@ Transform:
   m_Father: {fileID: 160316243}
   m_RootOrder: 84
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1692381053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692381051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13aa5d9efbe77404d909c59e52c25b63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayBeforeDisappearing: 1.8
 --- !u!65 &1692381054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11019,6 +11006,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692381051}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1692381057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692381051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13aa5d9efbe77404d909c59e52c25b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeDisappearing: 1.8
 --- !u!1 &1693272870
 GameObject:
   m_ObjectHideFlags: 0
@@ -12783,9 +12783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a5fce3d21ccbc419361da3b7b15dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2432985281636544556, guid: aebd2ceeb2b9ca14a9d1c5bd08ec739b, type: 3}
-  projectileNum: 30
-  projectileSpeed: 7
+  projectilePrefab: {fileID: 2432985281636544556, guid: bfcea72ea62623a4d9ffe7713ddf77fa, type: 3}
+  projectileNum: 100
+  projectileSpeed: 3
   accelerationSpeed: 0
   useMaxSpeed: 0
   maxSpeed: 0
@@ -12801,6 +12801,7 @@ MonoBehaviour:
   startAngle: 180
   shiftAngle: 5
   betweenDealy: 0.2
+  bossAnimator: {fileID: 1466971923}
 --- !u!4 &1841226785
 Transform:
   m_ObjectHideFlags: 0

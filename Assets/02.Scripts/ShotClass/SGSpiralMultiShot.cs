@@ -10,9 +10,11 @@ public class SGSpiralMultiShot : SGBaseShot
     public float betweenDealy = 0.2f;
     private int nowIndex;
     private float delayTimer;
-    public override void Shot()             //Shot 필수 구현 함수 (SGBaseShot)
+    public Animator bossAnimator; // 보스의 Animator를 저장할 변수
+
+    public override void Shot()
     {
-        if (projectileNum <= 0 || projectileSpeed <= 0f || spiralWayNum <= 0)    //옵션값검사
+        if (projectileNum <= 0 || projectileSpeed <= 0f || spiralWayNum <= 0)
         {
             return;
         }
@@ -23,7 +25,13 @@ public class SGSpiralMultiShot : SGBaseShot
         _shooting = true;
         nowIndex = 0;
         delayTimer = 0;
+        // 탄막이 발사되면 Attack 애니메이션을 시작
+        if (bossAnimator != null)
+        {
+            bossAnimator.SetTrigger("Attack");
+        }
     }
+
     protected virtual void Update()
     {
         if (_shooting == false)
@@ -32,14 +40,14 @@ public class SGSpiralMultiShot : SGBaseShot
         }
         delayTimer -= SGTimer.Instance.deltaTime;
 
-        while (delayTimer <= 0)        //총알 딜레이가 다 될경우
+        while (delayTimer <= 0)
         {
             float spiralWayShiftAngle = 360f / spiralWayNum;
 
-            for(int i = 0; i < spiralWayNum; i++)
+            for (int i = 0; i < spiralWayNum; i++)
             {
                 SGProjectile projectile = GetProjectile(transform.position);
-                if(projectile == null)
+                if (projectile == null)
                 {
                     break;
                 }
@@ -50,10 +58,10 @@ public class SGSpiralMultiShot : SGBaseShot
                 if (nowIndex >= projectileNum)
                 {
                     break;
-                }            
+                }
             }
             FiredShot();
-            if(nowIndex >= projectileNum)
+            if (nowIndex >= projectileNum)
             {
                 FinishedShot();
                 return;
