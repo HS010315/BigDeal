@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem waterbomb;
 
-
     public Transform bulletSpawnPoint; // 총알 발사 위치를 지정하기 위한 Transform 컴포넌트
     public GameObject bulletPrefab;    // 총알 프리팹
     public float bulletSpeed = 20f;    // 총알 속도
@@ -44,7 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
-
 
         GameObject mainCamera = Camera.main.gameObject;
         Physics.IgnoreCollision(mainCamera.GetComponent<Collider>(), GetComponent<Collider>());
@@ -194,6 +192,7 @@ public class PlayerController : MonoBehaviour
         {
             // 게이지가 비어있을 때 플레이어는 비행할 수 없습니다.
             isFlying = false;
+            waterbomb.Stop();
         }
     }
 
@@ -268,4 +267,5 @@ public class PlayerController : MonoBehaviour
         // 무적 상태 비활성화
         isInvincible = false;
     }
+
 }

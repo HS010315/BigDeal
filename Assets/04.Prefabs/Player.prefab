@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2972114148907486480}
   - component: {fileID: 2972114148907486495}
   - component: {fileID: 2972114148907486494}
-  - component: {fileID: 2972114148907486493}
   - component: {fileID: 2972114148907486469}
   - component: {fileID: 2972114148907486492}
   m_Layer: 0
@@ -65,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  flySpeed: 7
   dashSpeed: 40
   DashTime: 0.1
   jumpForce: 7
@@ -78,8 +78,14 @@ MonoBehaviour:
   - {fileID: 0}
   dashCooldown: 2
   gameOverPanel: {fileID: 0}
-  gameManager: {fileID: 0}
+  waterbomb: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  bulletSpeed: 20
+  fireRate: 0.5
+  damage: 10
   co: {fileID: 2972114148907486481}
+  ani: {fileID: 0}
 --- !u!54 &2972114148907486495
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,23 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f5ef94f09de2b43a1b7e9d315b7086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2972114148907486493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2972114148907486476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96a6bd2125992fe4594567ea401d8a9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 2972114149539343498}
-  bulletPrefab: {fileID: 1598749680590716836, guid: caa3725da5d70944f90745e7a24ca90d, type: 3}
-  bulletSpeed: 30
-  fireRate: 10
-  damage: 10
 --- !u!212 &2972114148907486469
 SpriteRenderer:
   m_ObjectHideFlags: 0
