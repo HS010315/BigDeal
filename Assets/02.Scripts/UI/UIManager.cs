@@ -12,7 +12,15 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        startCanvas.gameObject.SetActive(true);       
+        startCanvas.gameObject.SetActive(true);
+        Button exitButton = GetComponent<Button>();
+
+        // 만약 버튼이 존재하면
+        if (exitButton != null)
+        {
+            // 클릭 이벤트에 메서드 연결
+            exitButton.onClick.AddListener(ExitGameOnClick);
+        }
     }
 
 
@@ -37,6 +45,16 @@ public class UIManager : MonoBehaviour
     public void OnclickNLButton()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void ExitGameOnClick()
+    {
+        // 게임 종료
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
 }
