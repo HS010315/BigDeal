@@ -15,6 +15,6 @@ public class AudioVolumeControl : MonoBehaviour
 
     void OnVolumeChanged(float volume)
     {
-        audioSource.volume = volume;
+        audioSource.volume = 1 - volume;
     }
 }
