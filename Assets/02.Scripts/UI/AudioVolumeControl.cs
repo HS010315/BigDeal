@@ -7,14 +7,22 @@ public class AudioVolumeControl : MonoBehaviour
     public AudioSource audioSource;
     
 
+    void Awake()
+    {
+        float savedVolume = PlayerPrefs.GetFloat("SavedVolume", 0.5f);
+        audioSource.volume = savedVolume;
+        volumeSlider.value = 1 - savedVolume; 
+    }
+
     void Start()
     {
         volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-        volumeSlider.value = 0.5f;
     }
 
     void OnVolumeChanged(float volume)
     {
         audioSource.volume = 1 - volume;
+
+        PlayerPrefs.SetFloat("SavedVolume", audioSource.volume);
     }
 }
