@@ -186,6 +186,11 @@ public class PlayerController : MonoBehaviour
             nextFireTime = Time.time + 1 / fireRate;
         }
 
+        if (transform.position.y < -6f && !isInvincible)
+        {
+            PlayerDied();
+        }
+
     }
 
     public void Fly()
