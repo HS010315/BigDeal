@@ -146,7 +146,7 @@ MonoBehaviour:
   shootInterval: 2
   bulletPrefab: {fileID: 8155424913176920611, guid: dd8f146746afb0443bc102fe4659e06d, type: 3}
   bulletSpawnPoint: {fileID: 170553090172552931}
-  bulletSpeed: 5
+  bulletSpeed: 6
   health: 50
   scoreValue: 100
   deathEffectPrefab: {fileID: 11846865182793974, guid: 537355810a58ef7438f6cc833468c01b, type: 3}
