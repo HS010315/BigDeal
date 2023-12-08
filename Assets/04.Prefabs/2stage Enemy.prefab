@@ -149,4 +149,4 @@ MonoBehaviour:
   bulletSpeed: 5
   health: 50
   scoreValue: 100
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 11846865182793974, guid: 537355810a58ef7438f6cc833468c01b, type: 3}

@@ -86,7 +86,7 @@ public class GameManager : GenericSingleton<GameManager>
     void Awake()
     {
         // 현재 씬의 이름이 "1번 씬의 이름"과 같을 때 GameManager를 활성화
-        if (SceneManager.GetActiveScene().name == "1번 씬의 이름")
+        if (SceneManager.GetActiveScene().name == "GameScene")
         {
             isGameManagerActive = true;
         }
